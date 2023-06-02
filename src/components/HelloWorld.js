@@ -1,9 +1,22 @@
-const HelloWorldComponent = ({ groupName, fakeData }) => {
+import React from "react"
+
+const HelloWorldComponent = () => {
+    const passedProp = "Jupiter"
+    const fakeData = [
+        {
+            name: "Random Name",
+            age: 100
+        },
+        {
+            name: "Random Name",
+            age: 100
+        },
+    ]
 
     return (
         <div>
             <h1>
-                Hello {groupName}
+                Hello {passedProp}
             </h1>
             {fakeData.map((person) =>
                 <div>
