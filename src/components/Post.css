@@ -1,32 +1,56 @@
 .post-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 16px;
-    margin-bottom: 16px;
-  }
-  
-  .post-card-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .post-card-author {
-    font-size: 14px;
-    color: #888888;
-    margin-bottom: 4px;
-  }
-  
-  .post-card-date {
-    font-size: 12px;
-    color: #888888;
-    margin-bottom: 4px;
-  }
-  
-  .post-card-content {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333333;
-  }
-  
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.player-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.player-post-card {
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 1rem;
+  background-color: #36454f;
+  color: white;
+}
+
+.post-card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.post-card-author {
+  font-size: 14px;
+  color: #888888;
+  margin-bottom: 4px;
+}
+
+.post-card-date {
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 4px;
+}
+
+.post-card-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333333;
+}
+.player-post-card-active {
+  font-weight: 700;
+}
+.team-details {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

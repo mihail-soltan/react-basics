@@ -1,0 +1,10 @@
+.post-container {
+  min-height: 100vh;
+}
+.post-container,
+.big-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
