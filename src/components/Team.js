@@ -11,6 +11,7 @@ export default function Team({ team }) {
                 <p className="post-card-date">Created At: {convertDate(team.createdAt)} </p>
                 <p className="post-card-date">Updated At:{convertDate(team.updatedAt)} </p>
                 <p className="post-card-content">Created By:{team.createdBy} </p>
+                <p className="post-card-content">Updated By:{team.updatedBy || "---"} </p>
                 <Link to={`/${team._id}`} > Team Details </Link>
             </div>
         </div>

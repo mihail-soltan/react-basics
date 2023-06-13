@@ -27,6 +27,20 @@ export function convertDate(date) {
     return " - "
 }
 
+export function convertDoB(date) {
+    const initialDate = new Date(date)
+    const year = initialDate.getFullYear()
+    let month = initialDate.getMonth() + 1
+    if (month < 10) {
+        month = `0${month}`
+    }
+    let day = initialDate.getDate()
+    if (day < 10) {
+        day = `0${day}`
+    }
+    return `${year}-${month}-${day}`
+}
+
 export async function getAllTeams() {
     try {
         const response = await axios.get(`${API_URL}/teams`)
@@ -78,3 +92,52 @@ export const addNewPlayer = async (body) => {
     }
 }
 
+export const editTeam = async (teamId, body) => {
+    try {
+        const response = await axios.put(`${API_URL}/teams/${teamId}`, body)
+        return response
+    }
+    catch (err) {
+        throw new Error(`Something went wrong: ${err}`)
+    }
+}
+
+export const getOnePlayer = async (playerId) => {
+    try {
+        const response = await axios.get(`${API_URL}/players/${playerId}`)
+        return response
+    }
+    catch (err) {
+        throw new Error(`Something went wrong: ${err}`)
+    }
+}
+
+export const editPlayer = async (playerId, body) => {
+    try {
+        const response = await axios.put(`${API_URL}/players/${playerId}`, body)
+        return response
+    }
+    catch (err) {
+        throw new Error(`Something went wrong: ${err}`)
+    }
+}
+
+export const toggleTeamActivity = async (teamId, body) => {
+    try {
+        const response = await axios.put(`${API_URL}/teams/${teamId}/active`, body)
+        return response
+    }
+    catch (err) {
+        throw new Error(`Something went wrong: ${err}`)
+    }
+}
+
+export const togglePlayerActivity = async (player, body) => {
+    try {
+        const response = await axios.put(`${API_URL}/players/${player}/active`, body)
+        return response
+    }
+    catch (err) {
+        throw new Error(`Something went wrong: ${err}`)
+    }
+}

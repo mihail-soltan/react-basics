@@ -1,7 +1,12 @@
 import "./Post.css";
 import { convertDate } from "../services/api-service";
-export default function Player({ player }) {
+import { useNavigate } from 'react-router-dom';
 
+export default function Player({ player }) {
+    let navigate = useNavigate();
+    const onSeePlayerDetails = (id) => {
+        navigate(`${id}`)
+    }
     return (
         <div>
             <div className="player-post-card">
@@ -11,6 +16,8 @@ export default function Player({ player }) {
                 <p className="player-post-card-date">Created At:  {convertDate(player.createdAt)}</p>
                 <p className="player-post-card-date">Updated At: {convertDate(player.updatedAt)}</p>
                 <p className="player-post-card-content">Created By: {player.createdBy} </p>
+                <p className="player-post-card-content">Updated By: {player.updatedBy || "---"} </p>
+                <button className="btn" onClick={() => onSeePlayerDetails(player._id)}>See player details</button>
             </div>
         </div>
     )
